@@ -15,9 +15,11 @@
 7. [Running the Application](#running-the-application)
 8. [Demo Credentials](#demo-credentials)
 9. [Security Best Practices](#security-best-practices)
-10. [Internationalisation (i18n)](#internationalisation-i18n)
-11. [Testing](#testing)
-12. [Future Improvements](#future-improvements)
+10. [Helpful Redis commands](#helpful-redis-commands)
+11. [Redis Data Types & Usability](#redis-data-types--usability)
+12. [Internationalisation (i18n)](#internationalisation-i18n)
+13. [Testing](#testing)
+14. [Future Improvements](#future-improvements)
 
 ---
 
@@ -352,25 +354,6 @@ npm install
 npm start            # starts on http://localhost:4200
                      # proxies /api → http://localhost:3000
 ```
-
----
-
-## Running the Application
-
-```bash
-# Terminal 1 — backend
-cd backend && npm run dev
-
-# Terminal 2 — frontend
-npm start
-
-# Terminal 3 — backend tests
-cd backend && npm test
-
-# Terminal 4 — Angular unit tests
-npm test
-```
-
 ---
 
 ## Demo Credentials
@@ -382,6 +365,7 @@ npm test
 | `employee` | `Employee@123` | EMPLOYEE | Dashboard, Profile, Settings       |
 
 ---
+
 
 ## Security Best Practices
 
@@ -406,6 +390,35 @@ npm test
 ### Input Validation
 - All inputs validated with **express-validator** before reaching controllers
 - Requests over 10 KB rejected
+
+---
+
+## Helpful Redis commands
+| Command         | Purpose                              |
+| --------------- | ------------------------------------ |
+| `PING`          | Check Redis is running               |
+| `KEYS *`        | Show all keys (fine for development) |
+| `SCAN 0`        | Safely iterate through keys          |
+| `GET <key>`     | Read a string value                  |
+| `HGETALL <key>` | Read a hash                          |
+| `TTL <key>`     | Show remaining lifetime              |
+| `DEL <key>`     | Delete a key                         |
+| `FLUSHALL`      | Remove all data (development only)   |
+
+
+## Redis Data Types & Usability
+| Redis Data Type       | Stores                   | Time Complexity | Common Use Cases                      | Example                                         |
+| --------------------- | ------------------------ | --------------- | ------------------------------------- | ----------------------------------------------- |
+| **String**            | Single value             | O(1)            | JWT blacklist, OTP, Cache, Session ID | `SET otp:usr-001 123456`                        |
+| **Hash** ⭐            | Key-Value fields         | O(1)            | User profile, Refresh Token metadata  | `HSET rt:<jti> userId usr-001 tokenHash abc...` |
+| **List**              | Ordered collection       | O(1) head/tail  | Activity logs, Notifications          | `LPUSH login-history usr-001`                   |
+| **Set**               | Unique values            | O(1)            | User Roles, Active Devices            | `SADD user:usr-001:roles ADMIN USER`            |
+| **Sorted Set (ZSET)** | Ordered by score         | O(log N)        | Leaderboards, Expiring Sessions       | `ZADD sessions 1752050000 usr-001`              |
+| **Stream**            | Append-only event log    | O(1)            | Audit logs, Event-driven architecture | `XADD auth-events * action login`               |
+| **Bitmap**            | Bit array                | O(1)            | Feature flags, Daily login tracking   | `SETBIT login:2026-07-11 123 1`                 |
+| **HyperLogLog**       | Approximate unique count | O(1)            | Unique visitors                       | `PFADD visitors user1 user2`                    |
+| **Geospatial**        | Latitude & Longitude     | O(log N)        | Nearby users, Delivery apps           | `GEOADD users 77.59 12.97 usr-001`              |
+
 
 ---
 
