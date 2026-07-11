@@ -1,0 +1,41 @@
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h2 { font-size: 22px; font-weight: 500; margin: 0; }
+
+.filter-card  { margin-bottom: 16px; }
+
+.filter-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search-field { flex: 1; min-width: 200px; }
+
+.table-container { overflow-x: auto; }
+
+.users-table { width: 100%; }
+
+.table-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.no-data { text-align: center; padding: 40px; color: #999; }
+
+.role-admin    { background: #e3f2fd !important; color: #1565c0 !important; }
+.role-manager  { background: #e8f5e9 !important; color: #2e7d32 !important; }
+.role-employee { background: #fff3e0 !important; color: #e65100 !important; }
+
+.chip-green { background: #e8f5e9 !important; color: #388e3c !important; }
+.chip-red   { background: #ffebee !important; color: #c62828 !important; }
+
+.delete-item { color: #f44336; }

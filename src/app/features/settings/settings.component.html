@@ -1,0 +1,87 @@
+<div class="page-container">
+  <h2 class="page-title" i18n="Settings|Page title@@settings.title">Settings</h2>
+
+  <div class="settings-layout">
+
+    <!-- ── Appearance ────────────────────────────────────────────────── -->
+    <mat-card>
+      <mat-card-header>
+        <mat-icon mat-card-avatar>palette</mat-icon>
+        <mat-card-title i18n="Settings|Appearance card title@@settings.appearance.title">Appearance</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon matListItemIcon>dark_mode</mat-icon>
+            <span matListItemTitle
+              i18n="Settings|Dark mode toggle label@@settings.appearance.darkMode">Dark Mode</span>
+            <mat-slide-toggle
+              matListItemMeta
+              [checked]="darkMode()"
+              (change)="toggleDark($event.checked)"
+            />
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- ── Security ──────────────────────────────────────────────────── -->
+    <mat-card>
+      <mat-card-header>
+        <mat-icon mat-card-avatar>security</mat-icon>
+        <mat-card-title i18n="Settings|Security card title@@settings.security.title">Security</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon matListItemIcon>lock</mat-icon>
+            <span matListItemTitle
+              i18n="Settings|Token storage label@@settings.security.tokenStorage">Token Storage</span>
+            <span matListItemLine
+              i18n="Settings|Token storage description@@settings.security.tokenStorage.desc">HttpOnly Secure Cookies only — no localStorage</span>
+          </mat-list-item>
+          <mat-divider />
+          <mat-list-item>
+            <mat-icon matListItemIcon>devices</mat-icon>
+            <span matListItemTitle
+              i18n="Settings|Session label@@settings.security.session">Session</span>
+            <span matListItemLine
+              i18n="Settings|Session description@@settings.security.session.desc">Your session is managed server-side</span>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- ── Account ───────────────────────────────────────────────────── -->
+    <mat-card>
+      <mat-card-header>
+        <mat-icon mat-card-avatar>manage_accounts</mat-icon>
+        <mat-card-title i18n="Settings|Account card title@@settings.account.title">Account</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon matListItemIcon>person</mat-icon>
+            <span matListItemTitle
+              i18n="Settings|Username label@@settings.account.username">Username</span>
+            <span matListItemLine>{{ auth.currentUser()?.username }}</span>
+          </mat-list-item>
+          <mat-divider />
+          <mat-list-item>
+            <mat-icon matListItemIcon>admin_panel_settings</mat-icon>
+            <span matListItemTitle
+              i18n="Settings|Role label@@settings.account.role">Role</span>
+            <span matListItemLine>{{ auth.userRole() }}</span>
+          </mat-list-item>
+        </mat-list>
+        <div class="logout-row">
+          <button mat-stroked-button color="warn" (click)="logout()">
+            <mat-icon>logout</mat-icon>
+            <span i18n="Settings|Sign out button@@settings.btn.signOut">Sign Out</span>
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</div>

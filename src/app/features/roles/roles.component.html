@@ -1,0 +1,41 @@
+<div class="page-container">
+  <h2 class="page-title" i18n="Roles|Page title@@roles.title">Roles &amp; Permissions</h2>
+
+  @if (loading()) {
+    <app-skeleton [count]="3" height="80px" />
+  } @else {
+    <mat-accordion class="roles-accordion">
+      @for (role of roles(); track role.id) {
+        <mat-expansion-panel class="role-panel">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon class="role-icon" [class]="'icon-' + role.name.toLowerCase()">
+                admin_panel_settings
+              </mat-icon>
+              <span class="role-name">{{ role.label }}</span>
+            </mat-panel-title>
+            <mat-panel-description>
+              {{ role.description }}
+              <mat-chip class="user-count">
+                {{ role.userCount }}
+                <span i18n="Roles|User count suffix@@roles.userCount">{role.userCount, plural, =1 {user} other {users}}</span>
+              </mat-chip>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <div class="perms-grid">
+            <h4 i18n="Roles|Permissions section heading@@roles.permissions.heading">Permissions</h4>
+            <div class="chip-row">
+              @for (perm of role.permissions; track perm) {
+                <mat-chip class="perm-chip">
+                  <mat-icon matChipAvatar>check_circle</mat-icon>
+                  {{ perm }}
+                </mat-chip>
+              }
+            </div>
+          </div>
+        </mat-expansion-panel>
+      }
+    </mat-accordion>
+  }
+</div>

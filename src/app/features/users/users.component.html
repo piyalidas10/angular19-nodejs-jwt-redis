@@ -1,0 +1,154 @@
+<div class="page-container">
+  <div class="page-header">
+    <h2 i18n="Users|Page title@@users.title">User Management</h2>
+    <button
+      mat-raised-button color="primary"
+      *hasPermission="'USER_WRITE'"
+      (click)="openCreate()"
+    >
+      <mat-icon>add</mat-icon>
+      <span i18n="Users|Add user button@@users.btn.add">Add User</span>
+    </button>
+  </div>
+
+  <!-- ── Filters ──────────────────────────────────────────────────────── -->
+  <mat-card class="filter-card">
+    <mat-card-content>
+      <div class="filter-row">
+        <mat-form-field appearance="outline" class="search-field">
+          <mat-label i18n="Users|Search field label@@users.filter.search">Search</mat-label>
+          <input matInput [value]="searchTerm()" (input)="onSearch($event)"
+            placeholder="Name, email…"
+            i18n-placeholder="Users|Search placeholder@@users.filter.search.placeholder" />
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label i18n="Users|Role filter label@@users.filter.role">Role</mat-label>
+          <mat-select [value]="roleFilter()" (selectionChange)="onRoleFilter($event.value)">
+            <mat-option value="" i18n="Users|All roles option@@users.filter.role.all">All Roles</mat-option>
+            <mat-option value="ADMIN" i18n="Users|Admin role option@@users.filter.role.admin">Admin</mat-option>
+            <mat-option value="MANAGER" i18n="Users|Manager role option@@users.filter.role.manager">Manager</mat-option>
+            <mat-option value="EMPLOYEE" i18n="Users|Employee role option@@users.filter.role.employee">Employee</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <button mat-stroked-button (click)="resetFilters()">
+          <mat-icon>filter_alt_off</mat-icon>
+          <span i18n="Users|Clear filters button@@users.btn.clearFilters">Clear</span>
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  @if (loading()) {
+    <mat-progress-bar mode="indeterminate" />
+    <app-skeleton [count]="5" height="52px" />
+  } @else {
+    <mat-card>
+      <mat-card-content>
+        <div class="table-container">
+          <table mat-table [dataSource]="dataSource" matSort class="users-table">
+
+            <!-- Avatar -->
+            <ng-container matColumnDef="avatar">
+              <th mat-header-cell *matHeaderCellDef></th>
+              <td mat-cell *matCellDef="let row">
+                <img
+                  [src]="row.avatarUrl || 'https://i.pravatar.cc/40?u=' + row.id"
+                  [alt]="row.username"
+                  class="table-avatar"
+                />
+              </td>
+            </ng-container>
+
+            <!-- Name -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header
+                i18n="Users table|Name column header@@users.col.name">Name</th>
+              <td mat-cell *matCellDef="let row">
+                <strong>{{ row.firstName }} {{ row.lastName }}</strong>
+                <br /><small>{{ row.username }}</small>
+              </td>
+            </ng-container>
+
+            <!-- Email -->
+            <ng-container matColumnDef="email">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header
+                i18n="Users table|Email column header@@users.col.email">Email</th>
+              <td mat-cell *matCellDef="let row">{{ row.email }}</td>
+            </ng-container>
+
+            <!-- Department -->
+            <ng-container matColumnDef="department">
+              <th mat-header-cell *matHeaderCellDef
+                i18n="Users table|Department column header@@users.col.department">Department</th>
+              <td mat-cell *matCellDef="let row">{{ row.department }}</td>
+            </ng-container>
+
+            <!-- Role -->
+            <ng-container matColumnDef="role">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header
+                i18n="Users table|Role column header@@users.col.role">Role</th>
+              <td mat-cell *matCellDef="let row">
+                <mat-chip [class]="'role-chip role-' + row.role.toLowerCase()">{{ row.role }}</mat-chip>
+              </td>
+            </ng-container>
+
+            <!-- Status -->
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef
+                i18n="Users table|Status column header@@users.col.status">Status</th>
+              <td mat-cell *matCellDef="let row">
+                <mat-chip [class]="row.isActive ? 'chip-green' : 'chip-red'">
+                  @if (row.isActive) {
+                    <span i18n="Users table|Active status chip@@users.status.active">Active</span>
+                  } @else {
+                    <span i18n="Users table|Inactive status chip@@users.status.inactive">Inactive</span>
+                  }
+                </mat-chip>
+              </td>
+            </ng-container>
+
+            <!-- Actions -->
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef
+                i18n="Users table|Actions column header@@users.col.actions">Actions</th>
+              <td mat-cell *matCellDef="let row">
+                <button mat-icon-button [matMenuTriggerFor]="rowMenu" [matMenuTriggerData]="{ row: row }">
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell no-data" [attr.colspan]="displayedColumns.length"
+                i18n="Users table|No data row@@users.table.noData">
+                No users found.
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons />
+      </mat-card-content>
+    </mat-card>
+  }
+
+  <!-- ── Row context menu ─────────────────────────────────────────────── -->
+  <mat-menu #rowMenu>
+    <ng-template matMenuContent let-row="row">
+      <button mat-menu-item (click)="openEdit(row)" *hasPermission="'USER_WRITE'">
+        <mat-icon>edit</mat-icon>
+        <span i18n="Users menu|Edit action@@users.menu.edit">Edit</span>
+      </button>
+      <button mat-menu-item (click)="deleteUser(row)" *hasPermission="'USER_DELETE'" class="delete-item">
+        <mat-icon>delete</mat-icon>
+        <span i18n="Users menu|Delete action@@users.menu.delete">Delete</span>
+      </button>
+    </ng-template>
+  </mat-menu>
+</div>

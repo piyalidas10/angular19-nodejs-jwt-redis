@@ -1,0 +1,95 @@
+.page-title {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.profile-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+  align-items: start;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ── Identity card ─────────────────────────────────────────────────────────────
+.avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 0 20px;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.change-photo-btn { font-size: 12px; }
+
+.info-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.info-label {
+  font-size: 11px;
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-value { font-size: 14px; margin-top: 2px; }
+
+.role-chip { background: #3f51b5 !important; color: white !important; }
+
+.perms-section { padding: 16px 0 8px; }
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.perm-chip { background: #e8f5e9 !important; color: #2e7d32 !important; }
+
+// ── Edit form ─────────────────────────────────────────────────────────────────
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+.row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.full { width: 100%; }
+
+.success-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+}

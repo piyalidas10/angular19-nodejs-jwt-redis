@@ -1,0 +1,198 @@
+/* ==========================================================================
+   Global Styles - Angular 19 + Angular Material 19
+   ========================================================================== */
+
+@use '@angular/material' as mat;
+
+/* Material core */
+@include mat.core();
+
+/* --------------------------------------------------------------------------
+   Light Theme (default)
+   -------------------------------------------------------------------------- */
+
+html {
+  color-scheme: light;
+
+  @include mat.theme((
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+      //error: mat.$red-palette,
+    ),
+    typography: (
+      plain-family: Roboto,
+      brand-family: Roboto,
+      bold-weight: 700,
+      medium-weight: 500,
+      regular-weight: 400,
+    ),
+    density: 0,
+  ));
+}
+
+/* --------------------------------------------------------------------------
+   Dark Theme
+   -------------------------------------------------------------------------- */
+
+.dark-theme {
+  color-scheme: dark;
+
+  @include mat.theme((
+    color: (
+      theme-type: dark,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+      // error: mat.$red-palette,
+    ),
+    typography: (
+      plain-family: Roboto,
+      brand-family: Roboto,
+    ),
+    density: 0,
+  ));
+
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Global Reset
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  background: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+}
+
+/* ==========================================================================
+   Utility Classes
+   ========================================================================== */
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-2 {
+  gap: 8px;
+}
+
+.gap-4 {
+  gap: 16px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+/* ==========================================================================
+   Skeleton Loader
+   ========================================================================== */
+
+@keyframes skeleton-pulse {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #e0e0e0 25%,
+    #f5f5f5 50%,
+    #e0e0e0 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-pulse 1.4s ease-in-out infinite;
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   Material Overrides
+   ========================================================================== */
+
+.mat-mdc-card {
+  border-radius: 12px;
+}
+
+.mat-mdc-button,
+.mat-mdc-raised-button,
+.mat-mdc-outlined-button {
+  border-radius: 8px;
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.page-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: 16px;
+  }
+}

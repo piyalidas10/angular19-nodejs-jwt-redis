@@ -1,0 +1,9 @@
+<div class="skeleton-wrapper" [style.gap.px]="gap()">
+  @for (row of rows(); track $index) {
+    <div
+      class="skeleton"
+      [style.height]="height()"
+      [style.width]="width()"
+    ></div>
+  }
+</div>

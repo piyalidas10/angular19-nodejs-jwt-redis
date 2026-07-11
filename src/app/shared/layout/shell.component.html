@@ -1,0 +1,95 @@
+<mat-sidenav-container class="sidenav-container">
+
+  <!-- ── Sidebar ──────────────────────────────────────────────────────── -->
+  <mat-sidenav
+    #sidenav
+    [mode]="isMobile() ? 'over' : 'side'"
+    [opened]="!isMobile()"
+    class="sidenav"
+  >
+    <div class="sidenav-header">
+      <mat-icon class="logo-icon">lock</mat-icon>
+      <span class="logo-text" i18n="Shell|App name in sidebar@@shell.appName">AuthApp</span>
+    </div>
+
+    <mat-nav-list>
+      @for (item of visibleNavItems(); track item.route) {
+        <mat-list-item [routerLink]="item.route" routerLinkActive="active-link">
+          <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+          <span matListItemTitle>{{ item.label }}</span>
+        </mat-list-item>
+      }
+    </mat-nav-list>
+
+    <div class="sidenav-footer">
+      <mat-divider />
+      <div class="user-badge">
+        <img
+          [src]="auth.currentUser()?.avatarUrl || 'https://i.pravatar.cc/40'"
+          i18n-alt="Shell|Sidebar avatar alt text@@shell.avatar.alt"
+          alt="avatar"
+          class="avatar"
+        />
+        <div class="user-info">
+          <span class="name">{{ auth.displayName() }}</span>
+          <span class="role">{{ auth.userRole() }}</span>
+        </div>
+      </div>
+    </div>
+  </mat-sidenav>
+
+  <!-- ── Main content ──────────────────────────────────────────────────── -->
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="toolbar">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="toolbar-title" i18n="Shell|App name in toolbar@@shell.toolbar.appName">AuthApp</span>
+      <span class="spacer"></span>
+
+      <!-- Theme toggle -->
+      <button mat-icon-button
+        [matTooltip]="toggleThemeLabel"
+        i18n-matTooltip="Shell|Toggle theme tooltip@@shell.btn.toggleTheme"
+        (click)="toggleTheme()">
+        <mat-icon>{{ isDark ? 'light_mode' : 'dark_mode' }}</mat-icon>
+      </button>
+
+      <!-- User menu trigger -->
+      <button mat-icon-button [matMenuTriggerFor]="userMenu">
+        <img
+          [src]="auth.currentUser()?.avatarUrl || 'https://i.pravatar.cc/40'"
+          i18n-alt="Shell|Toolbar avatar alt text@@shell.toolbar.avatar.alt"
+          alt="avatar"
+          class="toolbar-avatar"
+        />
+      </button>
+
+      <mat-menu #userMenu>
+        <div class="menu-header">
+          <strong>{{ auth.displayName() }}</strong>
+          <small>{{ auth.currentUser()?.email }}</small>
+        </div>
+        <mat-divider />
+        <button mat-menu-item routerLink="/profile">
+          <mat-icon>person</mat-icon>
+          <span i18n="Shell|User menu profile link@@shell.menu.profile">Profile</span>
+        </button>
+        <button mat-menu-item routerLink="/settings">
+          <mat-icon>settings</mat-icon>
+          <span i18n="Shell|User menu settings link@@shell.menu.settings">Settings</span>
+        </button>
+        <mat-divider />
+        <button mat-menu-item (click)="logout()">
+          <mat-icon>logout</mat-icon>
+          <span i18n="Shell|User menu logout button@@shell.menu.logout">Logout</span>
+        </button>
+      </mat-menu>
+    </mat-toolbar>
+
+    <main class="main-content">
+      <router-outlet />
+    </main>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

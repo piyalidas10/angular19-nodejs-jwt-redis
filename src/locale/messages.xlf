@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+
+      <!-- ── Login ─────────────────────────────────────────────────────── -->
+      <trans-unit id="login.title" datatype="html">
+        <source>Sign In</source>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/features/login/login.component.html</context></context-group>
+        <note priority="1" from="description">Login page title</note>
+        <note priority="1" from="meaning">Main heading on the sign-in page</note>
+      </trans-unit>
+      <trans-unit id="login.subtitle" datatype="html">
+        <source>Enter your credentials to continue</source>
+        <context-group purpose="location"><context context-type="sourcefile">src/app/features/login/login.component.html</context></context-group>
+        <note priority="1" from="description">Login page subtitle</note>
+        <note priority="1" from="meaning">Instruction line below the sign-in title</note>
+      </trans-unit>
+      <trans-unit id="login.field.username" datatype="html">
+        <source>Username</source>
+        <note priority="1" from="description">Login form</note>
+        <note priority="1" from="meaning">Username field label</note>
+      </trans-unit>
+      <trans-unit id="login.field.username.placeholder" datatype="html">
+        <source>admin</source>
+        <note priority="1" from="description">Login form</note>
+        <note priority="1" from="meaning">Username placeholder</note>
+      </trans-unit>
+      <trans-unit id="login.error.username.required" datatype="html">
+        <source>Username is required.</source>
+        <note priority="1" from="description">Login form</note>
+        <note priority="1" from="meaning">Username required error</note>
+      </trans-unit>
+      <trans-unit id="login.field.password" datatype="html">
+        <source>Password</source>
+        <note priority="1" from="description">Login form</note>
+        <note priority="1" from="meaning">Password field label</note>
+      </trans-unit>
+      <trans-unit id="login.error.password.required" datatype="html">
+        <source>Password is required.</source>
+        <note priority="1" from="description">Login form</note>
+        <note priority="1" from="meaning">Password required error</note>
+      </trans-unit>
+      <trans-unit id="login.btn.submit" datatype="html">
+        <source>Sign In</source>
+        <note priority="1" from="description">Login form</note>
+        <note priority="1" from="meaning">Submit button label</note>
+      </trans-unit>
+      <trans-unit id="login.demo.title" datatype="html">
+        <source>Demo credentials</source>
+        <note priority="1" from="description">Login page</note>
+        <note priority="1" from="meaning">Demo credentials section heading</note>
+      </trans-unit>
+
+      <!-- ── Shell ─────────────────────────────────────────────────────── -->
+      <trans-unit id="shell.appName" datatype="html">
+        <source>AuthApp</source>
+        <note priority="1" from="description">Shell</note>
+        <note priority="1" from="meaning">App name in sidebar</note>
+      </trans-unit>
+      <trans-unit id="shell.avatar.alt" datatype="html">
+        <source>avatar</source>
+        <note priority="1" from="description">Shell</note>
+        <note priority="1" from="meaning">Sidebar avatar alt text</note>
+      </trans-unit>
+      <trans-unit id="shell.toolbar.appName" datatype="html">
+        <source>AuthApp</source>
+        <note priority="1" from="description">Shell</note>
+        <note priority="1" from="meaning">App name in toolbar</note>
+      </trans-unit>
+      <trans-unit id="shell.btn.toggleTheme" datatype="html">
+        <source>Toggle theme</source>
+        <note priority="1" from="description">Shell</note>
+        <note priority="1" from="meaning">Toggle theme tooltip</note>
+      </trans-unit>
+      <trans-unit id="shell.toolbar.avatar.alt" datatype="html">
+        <source>avatar</source>
+        <note priority="1" from="description">Shell</note>
+        <note priority="1" from="meaning">Toolbar avatar alt text</note>
+      </trans-unit>
+      <trans-unit id="shell.menu.profile" datatype="html">
+        <source>Profile</source>
+        <note priority="1" from="description">Shell</note>
+        <note priority="1" from="meaning">User menu profile link</note>
+      </trans-unit>
+      <trans-unit id="shell.menu.settings" datatype="html">
+        <source>Settings</source>
+        <note priority="1" from="description">Shell</note>
+        <note priority="1" from="meaning">User menu settings link</note>
+      </trans-unit>
+      <trans-unit id="shell.menu.logout" datatype="html">
+        <source>Logout</source>
+        <note priority="1" from="description">Shell</note>
+        <note priority="1" from="meaning">User menu logout button</note>
+      </trans-unit>
+      <trans-unit id="shell.nav.dashboard" datatype="html">
+        <source>Dashboard</source>
+        <note priority="1" from="description">Shell nav</note>
+        <note priority="1" from="meaning">Dashboard link</note>
+      </trans-unit>
+      <trans-unit id="shell.nav.users" datatype="html">
+        <source>Users</source>
+        <note priority="1" from="description">Shell nav</note>
+        <note priority="1" from="meaning">Users link</note>
+      </trans-unit>
+      <trans-unit id="shell.nav.roles" datatype="html">
+        <source>Roles</source>
+        <note priority="1" from="description">Shell nav</note>
+        <note priority="1" from="meaning">Roles link</note>
+      </trans-unit>
+      <trans-unit id="shell.nav.profile" datatype="html">
+        <source>My Profile</source>
+        <note priority="1" from="description">Shell nav</note>
+        <note priority="1" from="meaning">My Profile link</note>
+      </trans-unit>
+      <trans-unit id="shell.nav.settings" datatype="html">
+        <source>Settings</source>
+        <note priority="1" from="description">Shell nav</note>
+        <note priority="1" from="meaning">Settings link</note>
+      </trans-unit>
+
+      <!-- ── Dashboard ─────────────────────────────────────────────────── -->
+      <trans-unit id="dashboard.title" datatype="html">
+        <source>Dashboard</source>
+        <note priority="1" from="description">Dashboard</note>
+        <note priority="1" from="meaning">Page title</note>
+      </trans-unit>
+      <trans-unit id="dashboard.stat.totalUsers" datatype="html">
+        <source>Total Users</source>
+        <note priority="1" from="description">Dashboard</note>
+        <note priority="1" from="meaning">Total users stat</note>
+      </trans-unit>
+      <trans-unit id="dashboard.stat.activeUsers" datatype="html">
+        <source>Active Users</source>
+        <note priority="1" from="description">Dashboard</note>
+        <note priority="1" from="meaning">Active users stat</note>
+      </trans-unit>
+      <trans-unit id="dashboard.stat.totalRoles" datatype="html">
+        <source>Total Roles</source>
+        <note priority="1" from="description">Dashboard</note>
+        <note priority="1" from="meaning">Total roles stat</note>
+      </trans-unit>
+      <trans-unit id="dashboard.stat.totalPermissions" datatype="html">
+        <source>Total Permissions</source>
+        <note priority="1" from="description">Dashboard</note>
+        <note priority="1" from="meaning">Total permissions stat</note>
+      </trans-unit>
+      <trans-unit id="dashboard.session.title" datatype="html">
+        <source>Current Session</source>
+        <note priority="1" from="description">Dashboard</note>
+        <note priority="1" from="meaning">Current session card title</note>
+      </trans-unit>
+      <trans-unit id="dashboard.session.name" datatype="html">
+        <source>Name</source>
+        <note priority="1" from="description">Dashboard</note>
+        <note priority="1" from="meaning">Name label</note>
+      </trans-unit>
+      <trans-unit id="dashboard.session.email" datatype="html">
+        <source>Email</source>
+        <note priority="1" from="description">Dashboard</note>
+        <note priority="1" from="meaning">Email label</note>
+      </trans-unit>
+      <trans-unit id="dashboard.session.role" datatype="html">
+        <source>Role</source>
+        <note priority="1" from="description">Dashboard</note>
+        <note priority="1" from="meaning">Role label</note>
+      </trans-unit>
+      <trans-unit id="dashboard.session.department" datatype="html">
+        <source>Department</source>
+        <note priority="1" from="description">Dashboard</note>
+        <note priority="1" from="meaning">Department label</note>
+      </trans-unit>
+      <trans-unit id="dashboard.session.permissions" datatype="html">
+        <source>Permissions</source>
+        <note priority="1" from="description">Dashboard</note>
+        <note priority="1" from="meaning">Permissions label</note>
+      </trans-unit>
+      <trans-unit id="dashboard.activity.title" datatype="html">
+        <source>Recent Activity</source>
+        <note priority="1" from="description">Dashboard</note>
+        <note priority="1" from="meaning">Recent activity card title</note>
+      </trans-unit>
+      <trans-unit id="dashboard.apiStatus.title" datatype="html">
+        <source>API Status</source>
+        <note priority="1" from="description">Dashboard</note>
+        <note priority="1" from="meaning">API status card title</note>
+      </trans-unit>
+      <trans-unit id="dashboard.apiStatus.status" datatype="html">
+        <source>Status</source>
+        <note priority="1" from="description">Dashboard</note>
+        <note priority="1" from="meaning">Status label</note>
+      </trans-unit>
+      <trans-unit id="dashboard.apiStatus.uptime" datatype="html">
+        <source>Uptime</source>
+        <note priority="1" from="description">Dashboard</note>
+        <note priority="1" from="meaning">Uptime label</note>
+      </trans-unit>
+      <trans-unit id="dashboard.apiStatus.checked" datatype="html">
+        <source>Checked</source>
+        <note priority="1" from="description">Dashboard</note>
+        <note priority="1" from="meaning">Checked label</note>
+      </trans-unit>
+
+      <!-- ── Users ─────────────────────────────────────────────────────── -->
+      <trans-unit id="users.title" datatype="html">
+        <source>User Management</source>
+        <note priority="1" from="description">Users</note>
+        <note priority="1" from="meaning">Page title</note>
+      </trans-unit>
+      <trans-unit id="users.btn.add" datatype="html">
+        <source>Add User</source>
+        <note priority="1" from="description">Users</note>
+        <note priority="1" from="meaning">Add user button</note>
+      </trans-unit>
+      <trans-unit id="users.filter.search" datatype="html">
+        <source>Search</source>
+        <note priority="1" from="description">Users</note>
+        <note priority="1" from="meaning">Search field label</note>
+      </trans-unit>
+      <trans-unit id="users.filter.search.placeholder" datatype="html">
+        <source>Name, email…</source>
+        <note priority="1" from="description">Users</note>
+        <note priority="1" from="meaning">Search placeholder</note>
+      </trans-unit>
+      <trans-unit id="users.filter.role" datatype="html">
+        <source>Role</source>
+        <note priority="1" from="description">Users</note>
+        <note priority="1" from="meaning">Role filter label</note>
+      </trans-unit>
+      <trans-unit id="users.filter.role.all" datatype="html">
+        <source>All Roles</source>
+        <note priority="1" from="description">Users</note>
+        <note priority="1" from="meaning">All roles option</note>
+      </trans-unit>
+      <trans-unit id="users.filter.role.admin" datatype="html">
+        <source>Admin</source>
+        <note priority="1" from="description">Users</note>
+        <note priority="1" from="meaning">Admin role option</note>
+      </trans-unit>
+      <trans-unit id="users.filter.role.manager" datatype="html">
+        <source>Manager</source>
+        <note priority="1" from="description">Users</note>
+        <note priority="1" from="meaning">Manager role option</note>
+      </trans-unit>
+      <trans-unit id="users.filter.role.employee" datatype="html">
+        <source>Employee</source>
+        <note priority="1" from="description">Users</note>
+        <note priority="1" from="meaning">Employee role option</note>
+      </trans-unit>
+      <trans-unit id="users.btn.clearFilters" datatype="html">
+        <source>Clear</source>
+        <note priority="1" from="description">Users</note>
+        <note priority="1" from="meaning">Clear filters button</note>
+      </trans-unit>
+      <trans-unit id="users.col.name" datatype="html">
+        <source>Name</source>
+        <note priority="1" from="description">Users table</note>
+        <note priority="1" from="meaning">Name column header</note>
+      </trans-unit>
+      <trans-unit id="users.col.email" datatype="html">
+        <source>Email</source>
+        <note priority="1" from="description">Users table</note>
+        <note priority="1" from="meaning">Email column header</note>
+      </trans-unit>
+      <trans-unit id="users.col.department" datatype="html">
+        <source>Department</source>
+        <note priority="1" from="description">Users table</note>
+        <note priority="1" from="meaning">Department column header</note>
+      </trans-unit>
+      <trans-unit id="users.col.role" datatype="html">
+        <source>Role</source>
+        <note priority="1" from="description">Users table</note>
+        <note priority="1" from="meaning">Role column header</note>
+      </trans-unit>
+      <trans-unit id="users.col.status" datatype="html">
+        <source>Status</source>
+        <note priority="1" from="description">Users table</note>
+        <note priority="1" from="meaning">Status column header</note>
+      </trans-unit>
+      <trans-unit id="users.status.active" datatype="html">
+        <source>Active</source>
+        <note priority="1" from="description">Users table</note>
+        <note priority="1" from="meaning">Active status chip</note>
+      </trans-unit>
+      <trans-unit id="users.status.inactive" datatype="html">
+        <source>Inactive</source>
+        <note priority="1" from="description">Users table</note>
+        <note priority="1" from="meaning">Inactive status chip</note>
+      </trans-unit>
+      <trans-unit id="users.col.actions" datatype="html">
+        <source>Actions</source>
+        <note priority="1" from="description">Users table</note>
+        <note priority="1" from="meaning">Actions column header</note>
+      </trans-unit>
+      <trans-unit id="users.table.noData" datatype="html">
+        <source>No users found.</source>
+        <note priority="1" from="description">Users table</note>
+        <note priority="1" from="meaning">No data row</note>
+      </trans-unit>
+      <trans-unit id="users.menu.edit" datatype="html">
+        <source>Edit</source>
+        <note priority="1" from="description">Users menu</note>
+        <note priority="1" from="meaning">Edit action</note>
+      </trans-unit>
+      <trans-unit id="users.menu.delete" datatype="html">
+        <source>Delete</source>
+        <note priority="1" from="description">Users menu</note>
+        <note priority="1" from="meaning">Delete action</note>
+      </trans-unit>
+      <trans-unit id="users.deleteDialog.title" datatype="html">
+        <source>Delete User</source>
+        <note priority="1" from="description">Users dialog</note>
+        <note priority="1" from="meaning">Delete confirm title</note>
+      </trans-unit>
+      <trans-unit id="users.deleteDialog.message" datatype="html">
+        <source>Delete <x id="INTERPOLATION" equiv-text="{{ firstName }}"/> <x id="INTERPOLATION_1" equiv-text="{{ lastName }}"/>?</source>
+        <note priority="1" from="description">Users dialog</note>
+        <note priority="1" from="meaning">Delete confirm message</note>
+      </trans-unit>
+      <trans-unit id="users.snack.deleted" datatype="html">
+        <source>User deleted.</source>
+        <note priority="1" from="description">Users</note>
+        <note priority="1" from="meaning">Deleted snackbar</note>
+      </trans-unit>
+      <trans-unit id="users.snack.deleteFailed" datatype="html">
+        <source>Failed to delete user.</source>
+        <note priority="1" from="description">Users</note>
+        <note priority="1" from="meaning">Delete error snackbar</note>
+      </trans-unit>
+
+      <!-- ── User Dialog ────────────────────────────────────────────────── -->
+      <trans-unit id="userDialog.title.edit" datatype="html">
+        <source>Edit User</source>
+        <note priority="1" from="description">User dialog</note>
+        <note priority="1" from="meaning">Edit title</note>
+      </trans-unit>
+      <trans-unit id="userDialog.title.create" datatype="html">
+        <source>Create User</source>
+        <note priority="1" from="description">User dialog</note>
+        <note priority="1" from="meaning">Create title</note>
+      </trans-unit>
+      <trans-unit id="userDialog.field.firstName" datatype="html">
+        <source>First Name</source>
+        <note priority="1" from="description">User dialog</note>
+        <note priority="1" from="meaning">First name label</note>
+      </trans-unit>
+      <trans-unit id="userDialog.field.lastName" datatype="html">
+        <source>Last Name</source>
+        <note priority="1" from="description">User dialog</note>
+        <note priority="1" from="meaning">Last name label</note>
+      </trans-unit>
+      <trans-unit id="userDialog.field.username" datatype="html">
+        <source>Username</source>
+        <note priority="1" from="description">User dialog</note>
+        <note priority="1" from="meaning">Username label</note>
+      </trans-unit>
+      <trans-unit id="userDialog.field.password" datatype="html">
+        <source>Password</source>
+        <note priority="1" from="description">User dialog</note>
+        <note priority="1" from="meaning">Password label</note>
+      </trans-unit>
+      <trans-unit id="userDialog.field.email" datatype="html">
+        <source>Email</source>
+        <note priority="1" from="description">User dialog</note>
+        <note priority="1" from="meaning">Email label</note>
+      </trans-unit>
+      <trans-unit id="userDialog.field.department" datatype="html">
+        <source>Department</source>
+        <note priority="1" from="description">User dialog</note>
+        <note priority="1" from="meaning">Department label</note>
+      </trans-unit>
+      <trans-unit id="userDialog.field.role" datatype="html">
+        <source>Role</source>
+        <note priority="1" from="description">User dialog</note>
+        <note priority="1" from="meaning">Role label</note>
+      </trans-unit>
+      <trans-unit id="userDialog.role.admin" datatype="html">
+        <source>Admin</source>
+        <note priority="1" from="description">User dialog</note>
+        <note priority="1" from="meaning">Admin role option</note>
+      </trans-unit>
+      <trans-unit id="userDialog.role.manager" datatype="html">
+        <source>Manager</source>
+        <note priority="1" from="description">User dialog</note>
+        <note priority="1" from="meaning">Manager role option</note>
+      </trans-unit>
+      <trans-unit id="userDialog.role.employee" datatype="html">
+        <source>Employee</source>
+        <note priority="1" from="description">User dialog</note>
+        <note priority="1" from="meaning">Employee role option</note>
+      </trans-unit>
+      <trans-unit id="userDialog.btn.cancel" datatype="html">
+        <source>Cancel</source>
+        <note priority="1" from="description">User dialog</note>
+        <note priority="1" from="meaning">Cancel button</note>
+      </trans-unit>
+      <trans-unit id="userDialog.btn.save" datatype="html">
+        <source>Save</source>
+        <note priority="1" from="description">User dialog</note>
+        <note priority="1" from="meaning">Save button</note>
+      </trans-unit>
+      <trans-unit id="userDialog.snack.saved" datatype="html">
+        <source>User saved.</source>
+        <note priority="1" from="description">User dialog</note>
+        <note priority="1" from="meaning">Saved snackbar</note>
+      </trans-unit>
+      <trans-unit id="userDialog.snack.error" datatype="html">
+        <source>Failed to save user.</source>
+        <note priority="1" from="description">User dialog</note>
+        <note priority="1" from="meaning">Save error snackbar</note>
+      </trans-unit>
+
+      <!-- ── Roles ─────────────────────────────────────────────────────── -->
+      <trans-unit id="roles.title" datatype="html">
+        <source>Roles &amp; Permissions</source>
+        <note priority="1" from="description">Roles</note>
+        <note priority="1" from="meaning">Page title</note>
+      </trans-unit>
+      <trans-unit id="roles.userCount" datatype="html">
+        <source>{VAR_PLURAL, plural, =1 {user} other {users}}</source>
+        <note priority="1" from="description">Roles</note>
+        <note priority="1" from="meaning">User count suffix</note>
+      </trans-unit>
+      <trans-unit id="roles.permissions.heading" datatype="html">
+        <source>Permissions</source>
+        <note priority="1" from="description">Roles</note>
+        <note priority="1" from="meaning">Permissions section heading</note>
+      </trans-unit>
+
+      <!-- ── Profile ───────────────────────────────────────────────────── -->
+      <trans-unit id="profile.title" datatype="html">
+        <source>My Profile</source>
+        <note priority="1" from="description">Profile</note>
+        <note priority="1" from="meaning">Page title</note>
+      </trans-unit>
+      <trans-unit id="profile.avatar.alt" datatype="html">
+        <source>Profile photo</source>
+        <note priority="1" from="description">Profile</note>
+        <note priority="1" from="meaning">Avatar alt text</note>
+      </trans-unit>
+      <trans-unit id="profile.btn.changePhoto" datatype="html">
+        <source>Change Photo</source>
+        <note priority="1" from="description">Profile</note>
+        <note priority="1" from="meaning">Change photo button</note>
+      </trans-unit>
+      <trans-unit id="profile.info.fullName" datatype="html">
+        <source>Full Name</source>
+        <note priority="1" from="description">Profile</note>
+        <note priority="1" from="meaning">Full name label</note>
+      </trans-unit>
+      <trans-unit id="profile.info.email" datatype="html">
+        <source>Email</source>
+        <note priority="1" from="description">Profile</note>
+        <note priority="1" from="meaning">Email label</note>
+      </trans-unit>
+      <trans-unit id="profile.info.department" datatype="html">
+        <source>Department</source>
+        <note priority="1" from="description">Profile</note>
+        <note priority="1" from="meaning">Department label</note>
+      </trans-unit>
+      <trans-unit id="profile.info.role" datatype="html">
+        <source>Role</source>
+        <note priority="1" from="description">Profile</note>
+        <note priority="1" from="meaning">Role label</note>
+      </trans-unit>
+      <trans-unit id="profile.info.lastLogin" datatype="html">
+        <source>Last Login</source>
+        <note priority="1" from="description">Profile</note>
+        <note priority="1" from="meaning">Last login label</note>
+      </trans-unit>
+      <trans-unit id="profile.info.permissions" datatype="html">
+        <source>Permissions</source>
+        <note priority="1" from="description">Profile</note>
+        <note priority="1" from="meaning">Permissions label</note>
+      </trans-unit>
+      <trans-unit id="profile.edit.title" datatype="html">
+        <source>Edit Profile</source>
+        <note priority="1" from="description">Profile</note>
+        <note priority="1" from="meaning">Edit profile card title</note>
+      </trans-unit>
+      <trans-unit id="profile.field.firstName" datatype="html">
+        <source>First Name</source>
+        <note priority="1" from="description">Profile</note>
+        <note priority="1" from="meaning">First name field label</note>
+      </trans-unit>
+      <trans-unit id="profile.field.lastName" datatype="html">
+        <source>Last Name</source>
+        <note priority="1" from="description">Profile</note>
+        <note priority="1" from="meaning">Last name field label</note>
+      </trans-unit>
+      <trans-unit id="profile.field.email" datatype="html">
+        <source>Email</source>
+        <note priority="1" from="description">Profile</note>
+        <note priority="1" from="meaning">Email field label</note>
+      </trans-unit>
+      <trans-unit id="profile.field.department" datatype="html">
+        <source>Department</source>
+        <note priority="1" from="description">Profile</note>
+        <note priority="1" from="meaning">Department field label</note>
+      </trans-unit>
+      <trans-unit id="profile.btn.save" datatype="html">
+        <source>Save Changes</source>
+        <note priority="1" from="description">Profile</note>
+        <note priority="1" from="meaning">Save changes button</note>
+      </trans-unit>
+      <trans-unit id="profile.snack.success" datatype="html">
+        <source>Profile updated successfully.</source>
+        <note priority="1" from="description">Profile</note>
+        <note priority="1" from="meaning">Success snackbar</note>
+      </trans-unit>
+      <trans-unit id="profile.snack.error" datatype="html">
+        <source>Failed to update profile.</source>
+        <note priority="1" from="description">Profile</note>
+        <note priority="1" from="meaning">Error snackbar</note>
+      </trans-unit>
+
+      <!-- ── Settings ──────────────────────────────────────────────────── -->
+      <trans-unit id="settings.title" datatype="html">
+        <source>Settings</source>
+        <note priority="1" from="description">Settings</note>
+        <note priority="1" from="meaning">Page title</note>
+      </trans-unit>
+      <trans-unit id="settings.appearance.title" datatype="html">
+        <source>Appearance</source>
+        <note priority="1" from="description">Settings</note>
+        <note priority="1" from="meaning">Appearance card title</note>
+      </trans-unit>
+      <trans-unit id="settings.appearance.darkMode" datatype="html">
+        <source>Dark Mode</source>
+        <note priority="1" from="description">Settings</note>
+        <note priority="1" from="meaning">Dark mode toggle label</note>
+      </trans-unit>
+      <trans-unit id="settings.security.title" datatype="html">
+        <source>Security</source>
+        <note priority="1" from="description">Settings</note>
+        <note priority="1" from="meaning">Security card title</note>
+      </trans-unit>
+      <trans-unit id="settings.security.tokenStorage" datatype="html">
+        <source>Token Storage</source>
+        <note priority="1" from="description">Settings</note>
+        <note priority="1" from="meaning">Token storage label</note>
+      </trans-unit>
+      <trans-unit id="settings.security.tokenStorage.desc" datatype="html">
+        <source>HttpOnly Secure Cookies only — no localStorage</source>
+        <note priority="1" from="description">Settings</note>
+        <note priority="1" from="meaning">Token storage description</note>
+      </trans-unit>
+      <trans-unit id="settings.security.session" datatype="html">
+        <source>Session</source>
+        <note priority="1" from="description">Settings</note>
+        <note priority="1" from="meaning">Session label</note>
+      </trans-unit>
+      <trans-unit id="settings.security.session.desc" datatype="html">
+        <source>Your session is managed server-side</source>
+        <note priority="1" from="description">Settings</note>
+        <note priority="1" from="meaning">Session description</note>
+      </trans-unit>
+      <trans-unit id="settings.account.title" datatype="html">
+        <source>Account</source>
+        <note priority="1" from="description">Settings</note>
+        <note priority="1" from="meaning">Account card title</note>
+      </trans-unit>
+      <trans-unit id="settings.account.username" datatype="html">
+        <source>Username</source>
+        <note priority="1" from="description">Settings</note>
+        <note priority="1" from="meaning">Username label</note>
+      </trans-unit>
+      <trans-unit id="settings.account.role" datatype="html">
+        <source>Role</source>
+        <note priority="1" from="description">Settings</note>
+        <note priority="1" from="meaning">Role label</note>
+      </trans-unit>
+      <trans-unit id="settings.btn.signOut" datatype="html">
+        <source>Sign Out</source>
+        <note priority="1" from="description">Settings</note>
+        <note priority="1" from="meaning">Sign out button</note>
+      </trans-unit>
+
+      <!-- ── Error pages ────────────────────────────────────────────────── -->
+      <trans-unit id="error.403.title" datatype="html">
+        <source>403 — Unauthorized</source>
+        <note priority="1" from="description">Error pages</note>
+        <note priority="1" from="meaning">403 heading</note>
+      </trans-unit>
+      <trans-unit id="error.403.desc" datatype="html">
+        <source>You don't have permission to access this page.</source>
+        <note priority="1" from="description">Error pages</note>
+        <note priority="1" from="meaning">403 description</note>
+      </trans-unit>
+      <trans-unit id="error.404.title" datatype="html">
+        <source>404 — Page Not Found</source>
+        <note priority="1" from="description">Error pages</note>
+        <note priority="1" from="meaning">404 heading</note>
+      </trans-unit>
+      <trans-unit id="error.404.desc" datatype="html">
+        <source>The page you're looking for doesn't exist.</source>
+        <note priority="1" from="description">Error pages</note>
+        <note priority="1" from="meaning">404 description</note>
+      </trans-unit>
+      <trans-unit id="error.goToDashboard" datatype="html">
+        <source>Go to Dashboard</source>
+        <note priority="1" from="description">Error pages</note>
+        <note priority="1" from="meaning">Go to dashboard link</note>
+      </trans-unit>
+
+      <!-- ── Confirm Dialog ─────────────────────────────────────────────── -->
+      <trans-unit id="confirmDialog.btn.cancel" datatype="html">
+        <source>Cancel</source>
+        <note priority="1" from="description">Confirm dialog</note>
+        <note priority="1" from="meaning">Cancel button</note>
+      </trans-unit>
+      <trans-unit id="confirmDialog.btn.confirm" datatype="html">
+        <source>Confirm</source>
+        <note priority="1" from="description">Confirm dialog</note>
+        <note priority="1" from="meaning">Confirm button</note>
+      </trans-unit>
+
+      <!-- ── Global ─────────────────────────────────────────────────────── -->
+      <trans-unit id="global.snack.close" datatype="html">
+        <source>Close</source>
+        <note priority="1" from="description">Global</note>
+        <note priority="1" from="meaning">Snackbar close action</note>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

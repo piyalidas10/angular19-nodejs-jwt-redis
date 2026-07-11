@@ -1,0 +1,7 @@
+<div class="overlay" role="status" aria-live="polite" aria-label="Loading">
+  <mat-spinner [diameter]="48" />
+
+  @if (message()) {
+    <p class="msg">{{ message() }}</p>
+  }
+</div>

@@ -1,0 +1,14 @@
+.page-title {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.settings-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.logout-row { padding: 8px 0 4px; }

@@ -1,0 +1,70 @@
+<h2 mat-dialog-title>
+  @if (isEdit) {
+    <span i18n="User dialog|Edit title@@userDialog.title.edit">Edit User</span>
+  } @else {
+    <span i18n="User dialog|Create title@@userDialog.title.create">Create User</span>
+  }
+</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="form" class="dialog-form">
+
+    <div class="row-2">
+      <mat-form-field appearance="outline">
+        <mat-label i18n="User dialog|First name label@@userDialog.field.firstName">First Name</mat-label>
+        <input matInput formControlName="firstName" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label i18n="User dialog|Last name label@@userDialog.field.lastName">Last Name</mat-label>
+        <input matInput formControlName="lastName" />
+      </mat-form-field>
+    </div>
+
+    @if (!isEdit) {
+      <mat-form-field appearance="outline" class="full">
+        <mat-label i18n="User dialog|Username label@@userDialog.field.username">Username</mat-label>
+        <input matInput formControlName="username" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="full">
+        <mat-label i18n="User dialog|Password label@@userDialog.field.password">Password</mat-label>
+        <input matInput type="password" formControlName="password" />
+      </mat-form-field>
+    }
+
+    <mat-form-field appearance="outline" class="full">
+      <mat-label i18n="User dialog|Email label@@userDialog.field.email">Email</mat-label>
+      <input matInput type="email" formControlName="email" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full">
+      <mat-label i18n="User dialog|Department label@@userDialog.field.department">Department</mat-label>
+      <input matInput formControlName="department" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full">
+      <mat-label i18n="User dialog|Role label@@userDialog.field.role">Role</mat-label>
+      <mat-select formControlName="role">
+        <mat-option value="ADMIN" i18n="User dialog|Admin role option@@userDialog.role.admin">Admin</mat-option>
+        <mat-option value="MANAGER" i18n="User dialog|Manager role option@@userDialog.role.manager">Manager</mat-option>
+        <mat-option value="EMPLOYEE" i18n="User dialog|Employee role option@@userDialog.role.employee">Employee</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close
+    i18n="User dialog|Cancel button@@userDialog.btn.cancel">Cancel</button>
+  <button
+    mat-raised-button color="primary"
+    [disabled]="form.invalid || saving()"
+    (click)="save()"
+  >
+    @if (saving()) {
+      <mat-spinner diameter="18" />
+    } @else {
+      <span i18n="User dialog|Save button@@userDialog.btn.save">Save</span>
+    }
+  </button>
+</mat-dialog-actions>

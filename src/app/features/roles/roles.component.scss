@@ -1,0 +1,39 @@
+.page-title {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.roles-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.role-panel { border-radius: 12px !important; }
+
+.role-icon { margin-right: 12px; }
+
+.icon-admin    { color: #1565c0; }
+.icon-manager  { color: #2e7d32; }
+.icon-employee { color: #e65100; }
+
+.role-name  { font-weight: 500; font-size: 16px; }
+.user-count { background: #e3f2fd !important; margin-left: auto; }
+
+.perms-grid { padding: 16px 0; }
+
+h4 {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: #777;
+  text-transform: uppercase;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.perm-chip { background: #e8f5e9 !important; color: #2e7d32 !important; }

@@ -1,0 +1,52 @@
+{
+  "name": "llm-frontend",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "i18n:extract": "ng extract-i18n --output-path src/locale --out-file messages.xlf",
+    "build:fr": "ng build --localize",
+    "start:fr": "ng serve --configuration=fr",
+    "backend": "cd backend && npm run dev",
+    "backend:build": "tsc -p backend/tsconfig.json",
+    "backend:start": "node backend/dist/server.js",
+    "backend:test": "jest --config backend/jest.config.js",
+    "redis:start": "docker run -d --name auth-redis -p 6379:6379 redis:7-alpine",
+    "redis:stop": "docker stop auth-redis && docker rm auth-redis",
+    "redis:logs": "docker logs -f auth-redis",
+    "redis:cli": "docker exec -it auth-redis redis-cli"
+  },
+  "dependencies": {
+    "@angular/animations": "^19.0.0",
+    "@angular/cdk": "^19.0.0",
+    "@angular/common": "^19.0.0",
+    "@angular/compiler": "^19.0.0",
+    "@angular/core": "^19.0.0",
+    "@angular/forms": "^19.0.0",
+    "@angular/localize": "^19.0.0",
+    "@angular/material": "^19.0.0",
+    "@angular/platform-browser": "^19.0.0",
+    "@angular/platform-browser-dynamic": "^19.0.0",
+    "@angular/router": "^19.0.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.6.2",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^19.0.0",
+    "@angular/cli": "^19.0.0",
+    "@angular/compiler-cli": "^19.0.0",
+    "@types/jasmine": "~5.1.0",
+    "@types/node": "^20.10.6",
+    "jasmine-core": "~5.1.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "~5.8.2"
+  }
+}

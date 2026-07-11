@@ -1,0 +1,116 @@
+<div class="page-container">
+  <h2 class="page-title" i18n="Dashboard|Page title@@dashboard.title">Dashboard</h2>
+
+  @if (loading()) {
+    <app-skeleton [count]="4" height="120px" />
+  } @else {
+
+    <!-- ── Stats row ─────────────────────────────────────────────────── -->
+    <div class="stats-grid">
+      @for (stat of statsCards(); track stat.label) {
+        <mat-card class="stat-card" [class]="stat.colorClass">
+          <mat-card-content>
+            <div class="stat-inner">
+              <div>
+                <div class="stat-value">{{ stat.value }}</div>
+                <div class="stat-label">{{ stat.label }}</div>
+              </div>
+              <mat-icon class="stat-icon">{{ stat.icon }}</mat-icon>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+
+    <div class="content-grid">
+
+      <!-- ── Current session ──────────────────────────────────────────── -->
+      <mat-card class="info-card">
+        <mat-card-header>
+          <mat-icon mat-card-avatar>person</mat-icon>
+          <mat-card-title i18n="Dashboard|Current session card title@@dashboard.session.title">Current Session</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="user-info-rows">
+            <div class="info-row">
+              <span class="label" i18n="Dashboard|Name label@@dashboard.session.name">Name</span>
+              <span>{{ auth.displayName() }}</span>
+            </div>
+            <div class="info-row">
+              <span class="label" i18n="Dashboard|Email label@@dashboard.session.email">Email</span>
+              <span>{{ auth.currentUser()?.email }}</span>
+            </div>
+            <div class="info-row">
+              <span class="label" i18n="Dashboard|Role label@@dashboard.session.role">Role</span>
+              <mat-chip class="role-chip">{{ auth.userRole() }}</mat-chip>
+            </div>
+            <div class="info-row">
+              <span class="label" i18n="Dashboard|Department label@@dashboard.session.department">Department</span>
+              <span>{{ auth.currentUser()?.department }}</span>
+            </div>
+          </div>
+
+          <mat-divider />
+
+          <div class="perms-section">
+            <span class="label" i18n="Dashboard|Permissions label@@dashboard.session.permissions">Permissions</span>
+            <div class="chip-row">
+              @for (p of auth.userPermissions(); track p) {
+                <mat-chip>{{ p }}</mat-chip>
+              }
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- ── Recent Activity ───────────────────────────────────────────── -->
+      <mat-card class="info-card">
+        <mat-card-header>
+          <mat-icon mat-card-avatar>history</mat-icon>
+          <mat-card-title i18n="Dashboard|Recent activity card title@@dashboard.activity.title">Recent Activity</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-list>
+            @for (item of data()?.recentActivity; track item.id) {
+              <mat-list-item>
+                <mat-icon matListItemIcon>radio_button_unchecked</mat-icon>
+                <span matListItemTitle>{{ item.action }}</span>
+                <span matListItemLine>{{ item.user }} · {{ item.time | date:'short' }}</span>
+              </mat-list-item>
+            }
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- ── API Status ────────────────────────────────────────────────── -->
+      <mat-card class="info-card">
+        <mat-card-header>
+          <mat-icon
+            mat-card-avatar
+            [class]="data()?.apiStatus?.status === 'healthy' ? 'green' : 'red'"
+          >
+            {{ data()?.apiStatus?.status === 'healthy' ? 'check_circle' : 'error' }}
+          </mat-icon>
+          <mat-card-title i18n="Dashboard|API status card title@@dashboard.apiStatus.title">API Status</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="info-row">
+            <span class="label" i18n="Dashboard|Status label@@dashboard.apiStatus.status">Status</span>
+            <mat-chip [class]="data()?.apiStatus?.status === 'healthy' ? 'chip-green' : 'chip-red'">
+              {{ data()?.apiStatus?.status | uppercase }}
+            </mat-chip>
+          </div>
+          <div class="info-row">
+            <span class="label" i18n="Dashboard|Uptime label@@dashboard.apiStatus.uptime">Uptime</span>
+            <span>{{ formatUptime(data()?.apiStatus?.uptime ?? 0) }}</span>
+          </div>
+          <div class="info-row">
+            <span class="label" i18n="Dashboard|Checked label@@dashboard.apiStatus.checked">Checked</span>
+            <span>{{ data()?.apiStatus?.timestamp | date:'medium' }}</span>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+    </div>
+  }
+</div>
