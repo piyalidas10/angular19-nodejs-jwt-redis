@@ -255,8 +255,8 @@
         <target>Supprimer l'utilisateur</target>
       </trans-unit>
       <trans-unit id="users.deleteDialog.message" datatype="html">
-        <source>Delete <x id="INTERPOLATION" equiv-text="{{ firstName }}"/> <x id="INTERPOLATION_1" equiv-text="{{ lastName }}"/>?</source>
-        <target>Supprimer <x id="INTERPOLATION" equiv-text="{{ firstName }}"/> <x id="INTERPOLATION_1" equiv-text="{{ lastName }}"/> ?</target>
+        <source>Delete <x id="PH" equiv-text="{{ firstName }}"/> <x id="PH_1" equiv-text="{{ lastName }}"/>?</source>
+        <target>Supprimer <x id="PH" equiv-text="{{ firstName }}"/> <x id="PH_1" equiv-text="{{ lastName }}"/> ?</target>
       </trans-unit>
       <trans-unit id="users.snack.deleted" datatype="html">
         <source>User deleted.</source>

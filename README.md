@@ -500,7 +500,6 @@ Covers: AuthService signal state, login/logout flows, authGuard/roleGuard redire
 | Auth | OAuth2 / OIDC social login (Google, Microsoft) |
 | Security | CSRF double-submit cookie pattern |
 | Security | Content-Security-Policy nonce for inline scripts |
-| Sessions | Real session management with `express-session` |
 | Monitoring | Structured logging with Winston / Pino |
 | Observability | OpenTelemetry tracing |
 | Frontend | PWA support with offline capability |

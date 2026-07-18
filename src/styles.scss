@@ -37,6 +37,8 @@ html {
    -------------------------------------------------------------------------- */
 
 .dark-theme {
+  background-color: #121212;
+  color: #ffffff;
   color-scheme: dark;
 
   @include mat.theme((
@@ -52,9 +54,7 @@ html {
     ),
     density: 0,
   ));
-
-  background-color: #121212;
-  color: #ffffff;
+  
 }
 
 /* ==========================================================================
